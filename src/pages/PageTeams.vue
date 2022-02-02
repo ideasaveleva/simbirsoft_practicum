@@ -116,7 +116,7 @@ import MyInput from "@/components/UI/MyInput";
 
 	.observer {
 		height: 30px;
-		background: green;
+		background: #50b553;
 	}
 
 </style>

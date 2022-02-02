@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="league-block">
 		<h1>Страница с лигами</h1>
 		<input v-model="search" type="text" placeholder="Search league" />
 		<select v-model="select.value" @change="changeOption">
@@ -139,28 +139,7 @@ export default {
 </script>
 
 <style>
-.app__btns {
-	margin: 15px 0;
-	display: flex;
-	justify-content: space-between;
-}
-
-.page__wrapper {
-	display: flex;
-	margin-top: 15px;
-}
-
-.page {
-	border: 1px solid black;
-	padding: 10px;
-}
-
-.current-page {
-	border: 2px solid teal;
-}
-
-.observer {
-	height: 30px;
-	background: green;
+.league-block {
+	padding: 30px;
 }
 </style>

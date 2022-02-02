@@ -1,7 +1,10 @@
 <template>
 	<navbar></navbar>
 	<div class="app">
-		<router-view></router-view>
+		<div class="container-background"></div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
 	</div>
 </template>
 
@@ -15,12 +18,32 @@ import Navbar from "@/components/UI/Navbar";
 </script>
 
 <style>
+
 	* {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
+		font-family: 'Roboto' sans-serif;
+		font-size: 16px;
 	}
 	.app {
-		padding: 20px;
+		position: relative;
+		margin: 0 auto;
 	}
+	.app .container-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center center fixed url("./assets/ball.jpg");
+		background-size: cover;
+    opacity: 0.5;
+		height: 100vh;
+	}
+	.app .content {
+    position: relative;
+    z-index: 1;
+	}
+
 </style>

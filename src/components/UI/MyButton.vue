@@ -15,8 +15,8 @@ export default {
 <style>
 	button {
 		align-self: flex-end;
-		padding: 10px 20px;
-		background: teal;
+		padding: 15px 30px;
+		background: #1D46F6;
 		color: #fff;
 	}
 </style>
