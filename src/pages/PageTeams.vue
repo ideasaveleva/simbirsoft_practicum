@@ -13,7 +13,7 @@
 			/>
 		</div> -->
 		<teams-list
-		
+			:teams="teams"
 			v-if="!isPostLoading"
 		/>
 		<div v-else>Идет загрузка...</div>
