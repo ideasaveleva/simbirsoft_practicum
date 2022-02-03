@@ -1,22 +1,20 @@
 <template>
 	<button>
-		<slot>
-
-		</slot>
+		<slot> </slot>
 	</button>
 </template>
 
 <script>
 export default {
-	name:'my-button'
-}
+	name: "my-button",
+};
 </script>
 
 <style>
-	button {
-		align-self: flex-end;
-		padding: 15px 30px;
-		background: #1D46F6;
-		color: #fff;
-	}
+button {
+	align-self: flex-end;
+	padding: 15px 30px;
+	background: #003f90;
+	color: #fff;
+}
 </style>

@@ -8,19 +8,19 @@
 			</div>
 		</template>
 		<template v-if="$route.query.api == 'teams_coaches'">
-			<div>
+			<div class="coach-block">
 				{{ $route.query.team_name }}
 			</div>
 			<div class="coathes" v-for="coach in coaches" :key="coach.id">
 				<!-- <h2>Cписок тренеров команды</h2> -->
 				<!-- <list-matches :matches="matches" v-if="!isPostLoading" /> -->
 				<div class="coach-title"><strong>Имя:</strong> {{ coach.name }}</div>
-				<div><strong>Возраст:</strong> {{ coach.age }}</div>
-				<div><strong>Национальность:</strong> {{ coach.nationality }}</div>
-				<div><strong>Карьера:</strong> {{}}</div>
+				<h2><strong>Возраст:</strong> {{ coach.age }}</h2>
+				<h2><strong>Национальность:</strong> {{ coach.nationality }}</h2>
+				<h2><strong>Карьера:</strong> {{}}</h2>
 				<div v-for="coach in coach.career" :key="coach">
-					<div>start: {{ coach.start }}</div>
-					<div>end: {{ coach.end }}</div>
+					<h3>Начало: {{ coach.start }}</h3>
+					<h3>Окончание: {{ coach.end }}</h3>
 				</div>
 			</div>
 		</template>
@@ -45,7 +45,7 @@ export default {
 			matches: [],
 			coaches: [],
 			// dialogVisible: false,
-			// isPostLoading: false,
+			isPostLoading: false,
 			// selectedSort: '',
 			// searchQuery: '',
 			// sortOptions: [
@@ -86,12 +86,13 @@ export default {
 							},
 						}
 					);
-					// this.coachs = response.data.response[0].league[this.$route.query.api][0];
+					// this.coachs =
+					// 	response.data.response[0].league[this.$route.query.api][0];
 
 					// response.data.response.forEach((e) => {
 					// 	let career = e.career.filter((t) => {
 					// 		if (t.id == this.$route.query.team_id) {
-					// 		return t;
+					// 			return t;
 					// 		}
 					// 	});
 					// 	e.career = career;
@@ -123,32 +124,24 @@ export default {
 </script>
 
 <style scoped>
-.app__btns {
-	margin: 15px 0;
-	display: flex;
-	justify-content: space-between;
-}
-
-.page__wrapper {
-	display: flex;
-	margin-top: 15px;
-}
-
-.page {
-	border: 1px solid black;
-	padding: 10px;
-}
-
-.current-page {
-	border: 2px solid teal;
-}
-
 .observer {
 	height: 30px;
 	background: #50b553;
 }
-.coach-title {
+.coach-block {
+	background-color: rgba(255, 255, 255, 0.8);
 	margin-top: 20px;
+	border-radius: 5px;
+	padding: 10px;
+	font-weight: 600;
+}
+.coathes {
+	padding: 15px;
+	border: 2px solid #50b553;
+	margin-top: 15px;
+	justify-content: space-between;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
 }
 </style>
 

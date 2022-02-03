@@ -25,26 +25,25 @@ export default {
 		match: {
 			type: Object,
 			requiered: false,
-		}
-	}
-}
+		},
+	},
+};
 </script>
 
 <style scoped>
-	.match {
-		padding: 15px;
-		border: 2px solid teal;
-		margin-top: 15px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.match__btns {
-		display: flex;
-	}
-	.btn {
-		margin-right: 10px;
-		padding: 5px 10px;
-		border-radius: 5px;
-	}
+.match {
+	padding: 15px;
+	border: 2px solid #50b553;
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+}
+.btn {
+	margin-right: 10px;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
 </style>

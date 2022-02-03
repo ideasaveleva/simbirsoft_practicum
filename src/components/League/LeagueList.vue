@@ -5,7 +5,9 @@
 		<league-item v-for="post in posts" :post="post" :key="post.id" />
 		<!-- </transition-group> -->
 	</div>
-	<h2 v-else style="color: red">Список лиг пуст</h2>
+	<h2 v-else style="color: red; padding: 15px 0 10px; font-weight: 700">
+		Список лиг пуст
+	</h2>
 </template>
 
 <script>
@@ -25,20 +27,11 @@ export default {
 </script>
 
 <style scoped>
-.user-list-item {
-	display: inline-block;
-	margin-right: 10px;
-}
-.user-list-enter-active,
-.user-list-leave-active {
-	transition: all 0.4s ease;
-}
-.user-list-enter-from,
-.user-list-leave-to {
-	opacity: 0;
-	transform: translateX(130px);
-}
-.user-list-move {
-	transition: transform 0.4s ease;
+h3 {
+	font-weight: 700;
+	background-color: #50b553;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 30px;
 }
 </style>

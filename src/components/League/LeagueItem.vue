@@ -1,11 +1,11 @@
 <template>
 	<div class="post">
 		<div>
-			<div>{{ post.league.id }}</div>
-			<div><strong>Название лиги:</strong> {{ post.league.name }}</div>
-			<div><strong>Территория:</strong> {{ post.country.name }}</div>
-			<div><strong>Код страны:</strong> {{ post.country.code }}</div>
-			<div>
+			<h2>{{ post.league.id }}</h2>
+			<h2><strong>Название лиги:</strong> {{ post.league.name }}</h2>
+			<h2><strong>Территория:</strong> {{ post.country.name }}</h2>
+			<h2><strong>Код страны:</strong> {{ post.country.code }}</h2>
+			<div class="season-block">
 				<strong>Сезоны: </strong>
 				<my-button
 					class="btn"
@@ -45,18 +45,23 @@ export default {
 <style scoped>
 .post {
 	padding: 15px;
-	border: 2px solid teal;
+	border: 2px solid #50b553;
 	margin-top: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-.post__btns {
-	display: flex;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
 }
 .btn {
 	margin-right: 10px;
-	padding: 5px 10px;
+	margin-bottom: 10px;
+	padding: 3px 10px;
 	border-radius: 5px;
+	background: #0048a0;
+	color: #fff;
+}
+.season-block {
+	margin-top: 20px;
 }
 </style>

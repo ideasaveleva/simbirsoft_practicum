@@ -22,8 +22,10 @@ export default {
 <style>
 	.input {
 		width: 100%;
-		border: 1px solid teal;
+		border: 2px solid #50b553;
 		padding: 10px 15px;
 		margin-top: 15px;
+		border-radius: 5px;
+		margin-bottom: 15px;
 	}
 </style>

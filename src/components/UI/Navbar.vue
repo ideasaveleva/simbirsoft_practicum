@@ -24,7 +24,7 @@
 		height: 50px;
 		background-color: #000000;
 		color: #fff;
-		box-shadow: 5px 5px 5px gray;
+		box-shadow: 0px 3px 10px gray;
 		padding: 30px 50px;
 	}
 </style>

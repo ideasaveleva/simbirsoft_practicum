@@ -1,8 +1,8 @@
 <template>
 	<div class="league-block">
-		<h1>Страница с лигами</h1>
-		<input v-model="search" type="text" placeholder="Search league" />
-		<select v-model="select.value" @change="changeOption">
+		<h1 class="league-title">Страница с лигами</h1>
+		<my-input v-model="search" type="text" placeholder="Search league" />
+		<my-select v-model="select.value" @change="changeOption">
 			<!-- <option disabled value="">Выберите из списка</option> -->
 			<option
 				v-for="option in select.options"
@@ -11,7 +11,7 @@
 			>
 				{{ option.name }}
 			</option>
-		</select>
+		</my-select>
 		<!-- <my-input
 
 v-focus
@@ -33,7 +33,7 @@ v-model="selectedSort"
 
 </div> -->
 		<league-list v-if="!isPostLoading" :posts="posts" />
-		<div v-else>Идет загрузка...</div>
+		<div class="loading-title" v-else>Идет загрузка...</div>
 		<div class="observer"></div>
 	</div>
 </template>
@@ -77,12 +77,12 @@ export default {
 			posts: [],
 			// dialogVisible: false,
 			isPostLoading: false,
-			// selectedSort: '',
-			// searchQuery: '',
-			// sortOptions: [
-			// 	{value: 'post.currentSeason.startDate', name: 'По началу'},
-			// 	{value: 'post.currentSeason.endDate', name: 'По окончанию'},
-			// ],
+			selectedSort: "",
+			searchQuery: "",
+			sortOptions: [
+				{ value: "post.league.name", name: "По названию лиги" },
+				{ value: "post.currentSeason.endDate", name: "По окончанию" },
+			],
 		};
 	},
 	methods: {
@@ -114,26 +114,34 @@ export default {
 		this.fetchPosts();
 	},
 	computed: {
-		searchData() {
-			let search = this.search && this.search.toLowerCase();
-			let posts = this.posts;
+		// searchData() {
+		// 	let search = this.search && this.search.toLowerCase();
+		// 	let posts = this.posts;
 
-			if (search) {
-				posts = posts.filter((e) => {
-					return Object.keys(row).some((key) => {
-						if (key == "league") {
-							return String(row[key].name).toLowerCase().indexOf(search) > -1;
-						}
-					});
-				});
-			}
-		},
-		// 	sortedPosts() {
-		// 		return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]))
-		// 	},
-		// 	sortedAndSearchedPosts() {
-		// 		return this.sortedPosts.filter(post => post.title ? post.title.toLowerCase().includes(this.searchQuery.toLowerCase()) : "NULL")
+		// 	if (search) {
+		// 		posts = posts.filter((e) => {
+		// 			return Object.keys(row).some((key) => {
+		// 				if (key == "league") {
+		// 					return String(row[key].name).toLowerCase().indexOf(search) > -1;
+		// 				}
+		// 			});
+		// 		});
 		// 	}
+		// },
+		sortedPosts() {
+			return [...this.posts].sort((post1, post2) =>
+				post1[this.selectedSort]?.localeCompare(post2[this.selectedSort])
+			);
+		},
+		sortedAndSearchedPosts() {
+			return this.sortedPosts.filter((post) =>
+				post.league.name
+					? post.league.name
+							.toLowerCase()
+							.includes(this.searchQuery.toLowerCase())
+					: "NULL"
+			);
+		},
 	},
 };
 </script>
@@ -141,5 +149,16 @@ export default {
 <style>
 .league-block {
 	padding: 30px;
+}
+.league-title {
+	font-weight: 600;
+	font-size: 20px;
+	color: white;
+}
+.loading-title {
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+	padding: 10px;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
 	<div class="team">
 		<div>
-			<div>{{ team.team.id }}</div>
-			<div><strong>Название команды:</strong> {{ team.team.name }}</div>
-			<div><strong>Страна:</strong> {{ team.team.country }}</div>
-			<div><strong>Основана:</strong> {{ team.team.founded }}</div>
-			<div><strong>Стадион:</strong> {{ team.venue.name }}</div>
-			<div><strong>Адрес:</strong> {{ team.venue.address }}</div>
-			<div><strong>Город:</strong> {{ team.venue.city }}</div>
+			<h2>{{ team.team.id }}</h2>
+			<h2><strong>Название команды:</strong> {{ team.team.name }}</h2>
+			<h2><strong>Страна:</strong> {{ team.team.country }}</h2>
+			<h2><strong>Основана:</strong> {{ team.team.founded }}</h2>
+			<h2><strong>Стадион:</strong> {{ team.venue.name }}</h2>
+			<h2><strong>Адрес:</strong> {{ team.venue.address }}</h2>
+			<h2><strong>Город:</strong> {{ team.venue.city }}</h2>
 			<div>
 				<my-button
 					class="btn"
@@ -45,18 +45,19 @@ export default {
 <style scoped>
 .team {
 	padding: 15px;
-	border: 2px solid teal;
+	border: 2px solid #50b553;
 	margin-top: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-.team__btns {
-	display: flex;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
 }
 .btn {
-	margin-right: 10px;
-	padding: 5px 10px;
+	margin: 10px 10px 10px 0;
+	padding: 3px 10px;
 	border-radius: 5px;
+	background: #0048a0;
+	color: #fff;
 }
 </style>
