@@ -1,10 +1,10 @@
 <template>
 	<div class="navbar flex justify-between items-center content-center">
-		<router-link to="/">SoccerStat</router-link>
+		<router-link to="/">SoccerStat - feedback</router-link>
 		<div class="navbar__link">
 			<router-link to="/league">Лиги</router-link>
 			<router-link to="/teams" style="margin-left: 25px;">Команды</router-link>
-			<router-link to="/about" style="margin-left: 25px;">О сайте</router-link>
+			<router-link to="/about" style="margin-left: 25px;">Тестовое задание</router-link>
 			<!-- <my-button @click="$router.push('/store')" style="margin-left: 20px;">store</my-button>
 			<my-button @click="$router.push('/composition')" style="margin-left: 20px;">Composition</my-button> -->
 		</div>
