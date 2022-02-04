@@ -1,4 +1,3 @@
-# 777
 
 ## Project setup
 ```
